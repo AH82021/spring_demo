@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- bean definitions here -->
+    <bean id="v6Engine" class="com.demo.V6Engine"/>
+    <bean id="v8Engine" class="com.demo.V8Engine"/>
+    <bean id="auto" class="com.demo.AutomaticTransmission" />
+    <bean id="manual" class="com.demo.ManualTransmission" />
+
+    <bean id ="zevarCar" class="com.demo.Car">
+        <constructor-arg ref="v6Engine"/>
+        <property name="transmission" ref="auto" />
+    </bean>
+
+    <bean id ="farazCar" class="com.demo.Car">
+        <constructor-arg ref="v8Engine"/>
+        <property name="transmission" ref="manual" />
+    </bean>
+
+
+
+
+</beans>
